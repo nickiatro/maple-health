@@ -12,3 +12,7 @@ app.use(bodyParser());
 app.use(session({ secret: 'mySupErSecReTSECreT!!' }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+require('./routes.js')(app, passport);
+
+app.listen(port);
