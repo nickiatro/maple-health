@@ -21,7 +21,7 @@ connection.connect(err => {
     if (err) throw err;
   });
   sql =
-    'CREATE TABLE users (username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, province VARCHAR(255) NOT NULL, postal_code VARCHAR(7) NOT NULL)';
+    'CREATE TABLE users (username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) NOT NULL, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL ,email VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, province VARCHAR(255) NOT NULL, postal_code VARCHAR(7) NOT NULL)';
   connection.query(sql, (err, result) => {
     if (err) throw err;
   });
