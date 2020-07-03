@@ -5,7 +5,8 @@ var passport = require('passport');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-app.use(bodyParser());
+require('./config/passport')(passport);
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(
   session({
