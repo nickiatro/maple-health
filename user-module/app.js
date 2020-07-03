@@ -3,9 +3,12 @@ var path = require('path');
 var mysql = require('mysql');
 
 var app = express();
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
 require('./routes/routes')(app);
+require('./routes/user_routes')(app);
 
 var connection = mysql.createConnection({
   host: 'localhost',
