@@ -2,6 +2,11 @@ var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
 
+var app = express();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+require('./routes/routes')(app);
+
 var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -9,27 +14,18 @@ var connection = mysql.createConnection({
   database: 'company',
 });
 
-connection.connect();
-
-var app = express();
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-app.get('/', (req, res) => {
-  res.render('index', { title: 'User Management' });
-});
-
-app.get('/register', (req, res) => {
-  res.render('create_user', { title: 'Create User' });
-});
-
-app.get('/login', (req, res) => {
-  res.render('user_login', { title: 'Login' });
-});
-
-app.get('/update', (req, res) => {
-  res.render('update_user', { title: 'Update User Information' });
+connection.connect(err => {
+  if (err) throw err;
+  var sql = 'DROP TABLE IF EXISTS users';
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+  });
+  sql =
+    'CREATE TABLE users (username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, province VARCHAR(255) NOT NULL, postal_code VARCHAR(7) NOT NULL)';
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+  });
+  connection.end();
 });
 
 app.listen(3001, () => {
