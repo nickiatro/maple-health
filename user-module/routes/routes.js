@@ -4,7 +4,7 @@ module.exports = app => {
   });
 
   app.get('/register', (req, res) => {
-    res.render('create_user', { title: 'Create User' });
+    res.render('create_user', { title: 'User Registration' });
   });
 
   app.get('/login', (req, res) => {
