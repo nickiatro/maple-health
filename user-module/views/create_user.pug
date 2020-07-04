@@ -4,7 +4,7 @@ html
         title #{title}
     body
         h1 #{title}
-        form(method='POST', action="/users/add")
+        form(method='POST', action="/register")
             #form-group
                 label Username: 
                 input.form-control(name="username", type="text")
@@ -15,11 +15,11 @@ html
             br
             #form-group
                 label First Name: 
-                input.form-control(name="first-name", type="text")
+                input.form-control(name="first_name", type="text")
             br
             #form-group
                 label Last Name: 
-                input.form-control(name="last-name", type="text")
+                input.form-control(name="last_name", type="text")
             br
             #form-group
                 label Email Address:  
@@ -52,6 +52,6 @@ html
             br
             #form-group
                 label Postal Code: 
-                input.form-control(name="postal-code", type="text")
+                input.form-control(name="postal_code", type="text")
             br
             input.btn.btn-primary(type="submit")
