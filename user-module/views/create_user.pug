@@ -4,3 +4,54 @@ html
         title #{title}
     body
         h1 #{title}
+        form(method='POST', action="/users/add")
+            #form-group
+                label Username: 
+                input.form-control(name="username", type="text")
+            br
+            #form-group
+                label Password: 
+                input.form-control(name="password", type="text")
+            br
+            #form-group
+                label First Name: 
+                input.form-control(name="first-name", type="text")
+            br
+            #form-group
+                label Last Name: 
+                input.form-control(name="last-name", type="text")
+            br
+            #form-group
+                label Email Address:  
+                input.form-control(name="email", type="text")
+            br
+            #form-group
+                label Street Address: 
+                input.form-control(name="street", type="text")
+            br
+            #form-group
+                label City/Town: 
+                input.form-control(name="city", type="text")
+            br
+            #form-group
+                label Province/Territory: 
+                select.form-control(name="province")
+                    option(value="BC") British Columbia / Colombie-Britannique
+                    option(value="AB") Alberta
+                    option(value="SK") Saskatchewan
+                    option(value="MB") Manitoba
+                    option(value="ON") Ontario
+                    option(value="QC") Québec
+                    option(value="NB") New Brunswick / Nouveau-Brunswick
+                    option(value="PE") Prince Edward Island / Île-du-Prince-Édouard
+                    option(value="NS") Nova Scotia / Nouvelle-Écosse
+                    option(value="NL") Newfoundland and Labrador / Terre-Neuve-et-Labrador
+                    option(value="YT") Yukon
+                    option(value="NT") Northwest Territories / Territoires du Nord-Ouest
+                    option(value="NU") Nunavut
+            br
+            #form-group
+                label Postal Code: 
+                input.form-control(name="postal-code", type="text")
+            br
+            input.btn.btn-primary(type="submit")
