@@ -15,7 +15,7 @@ app.set('view engine', 'pug');
 require('./routes/routes')(app);
 require('./routes/user_routes')(app);
 
-database.createTables();
+database.createUserTable();
 
 app.listen(3001, () => {
   console.log('Server started on port 3001');
