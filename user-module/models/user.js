@@ -24,10 +24,23 @@ exports.insertUser = (req, res) => {
     ');';
   database.connection.query(sql, (err, result) => {
     if (err) {
-      console.log(err);
-      return;
+      throw err;
     } else {
       return;
     }
   });
+};
+
+var results;
+exports.getAllUsers = (req, res) => {
+  var sql = 'SELECT * FROM users;';
+  database.connection.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      results = result;
+      return;
+    }
+  });
+  return results;
 };
