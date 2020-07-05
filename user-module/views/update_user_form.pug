@@ -5,7 +5,7 @@ block content
     form(method='POST', action="/update/" + user[0].username)
         #form-group
             label Username: 
-            input.form-control(name="username", type="text" value=user[0].username)
+            input.form-control.disabled(name="username", type="text" value=user[0].username disabled)
         br
         #form-group
             label Password: 
