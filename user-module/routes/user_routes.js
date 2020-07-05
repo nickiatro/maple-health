@@ -15,4 +15,6 @@ module.exports = app => {
       user: user_controller.getUser(req.params.username),
     });
   });
+
+  app.post('/update/:username', user_controller.updateUser);
 };
