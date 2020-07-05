@@ -9,3 +9,7 @@ exports.insertUser = (req, res) => {
 exports.getAllUsers = (req, res) => {
   return User.getAllUsers(req, res);
 };
+
+exports.getUser = (req, res) => {
+  return User.getUser(req, res);
+};
