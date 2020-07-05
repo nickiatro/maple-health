@@ -3,34 +3,38 @@ extends layout
 block content
     h1 #{title}
     br
-    p 
-        em Please select the user that you would like to update.
-        
-    div.table-responsive 
-        table.table.table-hover.table-sm
-            thead.thead-dark
-                th Username
-                th Password
-                th First Name
-                th Last Name
-                th Email Address
-                th Street Address
-                th City/Town
-                th Province/Territory
-                th Postal Code
-                th
-            tbody
-            each r in result
-                tr
-                    td= r.username
-                    td= r.password
-                    td= r.first_name
-                    td= r.last_name
-                    td= r.email
-                    td= r.street
-                    td= r.city
-                    td= r.province
-                    td= r.postal_code
-                    td
-                        div
-                            a.btn.btn-primary(href=("/update/" + r.username)) Update
+    if result
+        p 
+            em Please select the user that you would like to update.
+            
+        div.table-responsive 
+            table.table.table-hover.table-sm
+                thead.thead-dark
+                    th Username
+                    th Password
+                    th First Name
+                    th Last Name
+                    th Email Address
+                    th Street Address
+                    th City/Town
+                    th Province/Territory
+                    th Postal Code
+                    th
+                tbody
+                each r in result
+                    tr
+                        td= r.username
+                        td= r.password
+                        td= r.first_name
+                        td= r.last_name
+                        td= r.email
+                        td= r.street
+                        td= r.city
+                        td= r.province
+                        td= r.postal_code
+                        td
+                            div
+                                a.btn.btn-primary(href=("/update/" + r.username)) Update
+    else
+        p 
+            em No user found!<br />Try refreshing the page or searching for another user.
