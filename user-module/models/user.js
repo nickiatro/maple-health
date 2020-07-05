@@ -44,3 +44,17 @@ exports.getAllUsers = (req, res) => {
   });
   return results;
 };
+
+var user;
+exports.getUser = username => {
+  var sql = "SELECT * FROM users WHERE username = '" + username + "';";
+  database.connection.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      user = result;
+      return;
+    }
+  });
+  return user;
+};
