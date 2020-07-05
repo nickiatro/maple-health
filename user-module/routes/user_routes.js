@@ -8,4 +8,11 @@ module.exports = app => {
       result: user_controller.getAllUsers(),
     });
   });
+
+  app.get('/update/:username', (req, res) => {
+    res.render('update_user_form', {
+      title: 'Update User Information',
+      user: user_controller.getUser(req.params.username),
+    });
+  });
 };
