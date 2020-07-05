@@ -10,8 +10,4 @@ module.exports = app => {
   app.get('/login', (req, res) => {
     res.render('user_login', { title: 'Login' });
   });
-
-  app.get('/update', (req, res) => {
-    res.render('update_user', { title: 'Update User Information' });
-  });
 };
