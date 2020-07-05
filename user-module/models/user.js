@@ -58,3 +58,34 @@ exports.getUser = username => {
   });
   return user;
 };
+
+exports.updateUser = (req, res) => {
+  var sql =
+    "UPDATE users SET password = '" +
+    req.body.password +
+    "', first_name = '" +
+    req.body.first_name +
+    "', last_name = '" +
+    req.body.last_name +
+    "', email = '" +
+    req.body.email +
+    "', street = '" +
+    req.body.street +
+    "', city = '" +
+    req.body.city +
+    "', province = '" +
+    req.body.province +
+    "', postal_code = '" +
+    req.body.postal_code +
+    "' WHERE username = '" +
+    req.body.username +
+    "';";
+  console.log(sql);
+  database.connection.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    } else {
+      return;
+    }
+  });
+};
