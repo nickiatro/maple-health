@@ -13,3 +13,9 @@ exports.getAllUsers = (req, res) => {
 exports.getUser = (req, res) => {
   return User.getUser(req, res);
 };
+
+exports.updateUser = (req, res) => {
+  User.updateUser(req, res);
+  res.redirect('/update');
+  return;
+};
