@@ -11,14 +11,13 @@ module.exports = function(passport) {
         "SELECT * FROM users WHERE username ='" + username + "'",
         function(err, user) {
           if (err) throw err;
-          if (!user) {
+          if (user.length == 0) {
             return done(null, false, { message: 'No user found!' });
           }
-
           bcrypt.compare(password, user[0].password, function(err, isMatch) {
             if (err) throw err;
             if (isMatch) {
-              return done(null, user);
+              return done(null, user[0]);
             } else {
               return done(null, false, { message: 'Incorrect password!' });
             }
@@ -29,12 +28,15 @@ module.exports = function(passport) {
   );
 
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user.username);
   });
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
-    });
+  passport.deserializeUser(function(username, done) {
+    database.connection.query(
+      "SELECT * FROM users WHERE username = '" + username + "'",
+      function(err, user) {
+        done(err, user[0]);
+      }
+    );
   });
 };
