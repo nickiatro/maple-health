@@ -12,13 +12,20 @@ html
                 ul.navbar-nav.mr-auto
                     li.nav-item
                         a.nav-link(href='/') Home 
-                    li.nav-item
-                        a.nav-link(href='/register') Add Users
-                    li.nav-item
-                        a.nav-link(href='/update') Update Users
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/register') Add Users
+                        li.nav-item
+                            a.nav-link(href='/update') Update Users
                 ul.navbar-nav
-                    li.nav-item
-                        a.nav-link(href='/login') Login
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/') Logout
+                    else
+                        li.nav-item
+                            a.nav-link(href='/login') Login
+                        li.nav-item
+                            a.nav-link(href='/register') Register
         br
         .container
             block content
