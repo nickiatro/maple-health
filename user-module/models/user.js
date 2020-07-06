@@ -65,7 +65,7 @@ exports.getUser = username => {
     if (err) {
       throw err;
     } else {
-      user = result;
+      user = result[0];
       return;
     }
   });
