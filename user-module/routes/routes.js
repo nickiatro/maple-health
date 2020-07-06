@@ -10,4 +10,16 @@ module.exports = app => {
   app.get('/login', (req, res) => {
     res.render('user_login', { title: 'Login' });
   });
+
+  app.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+    })(req, res, next);
+  });
+
+  app.get('*', (req, res, next) => {
+    res.locals.user = req.user || null;
+    next();
+  });
 };

@@ -18,11 +18,4 @@ module.exports = app => {
   });
 
   app.post('/update/:username', user_controller.updateUser);
-
-  app.post('/login', (req, res, next) => {
-    passport.authenticate('local', {
-      successRedirect: '/update',
-      failureRedirect: '/login',
-    })(req, res, next);
-  });
 };
