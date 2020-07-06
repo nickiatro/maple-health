@@ -1,4 +1,5 @@
 var user_controller = require('../controllers/user_controller');
+var passport = require('passport');
 module.exports = app => {
   app.post('/register', user_controller.insertUser);
 
@@ -17,4 +18,11 @@ module.exports = app => {
   });
 
   app.post('/update/:username', user_controller.updateUser);
+
+  app.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+      successRedirect: '/update',
+      failureRedirect: '/login',
+    })(req, res, next);
+  });
 };
