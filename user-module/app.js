@@ -3,6 +3,7 @@ var path = require('path');
 var user = require('./models/user');
 var bodyParser = require('body-parser');
 var database = require('./config/database');
+var passport = require('passport');
 
 var app = express();
 
@@ -17,6 +18,10 @@ require('./routes/routes')(app);
 require('./routes/user_routes')(app);
 
 database.createUserTable();
+
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.listen(3001, () => {
   console.log('Server started on port 3001');
