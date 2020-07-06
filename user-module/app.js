@@ -23,6 +23,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('*', (req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
