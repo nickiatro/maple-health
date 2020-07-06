@@ -1,4 +1,9 @@
 extends layout
 
 block content
-    h1 Welcome to the #{title} Module!
+    if user
+        h1 Welcome, #{user.first_name} #{user.last_name}!
+    else
+        h1 #{title} Module
+        p
+            em Please log in to continue.
