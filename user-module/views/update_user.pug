@@ -2,16 +2,14 @@ extends layout
 
 block content
     h1 #{title}
-    br
     if result
         p 
-            em Please select the user that you would like to update.
+            em Click the button to update the user.
             
         div.table-responsive 
             table.table.table-hover.table-sm
                 thead.thead-dark
                     th Username
-                    th Password
                     th First Name
                     th Last Name
                     th Email Address
@@ -24,7 +22,6 @@ block content
                 each r in result
                     tr
                         td= r.username
-                        td= r.password
                         td= r.first_name
                         td= r.last_name
                         td= r.email
