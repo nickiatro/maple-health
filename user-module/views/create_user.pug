@@ -74,9 +74,17 @@ block script
             else
                 return false;
         }
-
+        
+        function isValidPostalCode() {
+            if ($("[name='postal_code']").val().match(/[A-Z]\d[A-Z]\s\d[A-Z]\d/)) {
+                return true;
+            }
+            else
+                return false;
+        }
+        
         function isValid() {
-            return !isEmpty() && isValidEmail();
+            return !isEmpty() && isValidEmail() && isValidPostalCode();
         };
 
         $(document).ready(function() {
