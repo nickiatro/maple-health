@@ -53,3 +53,89 @@ block content
             input.form-control(name="postal_code", type="text")
         br
         input.btn.btn-primary(type="submit" disabled)
+
+block script
+    script.
+    
+        function isEmpty(){
+            if ($("[name='username']").val() && $("[name='password']").val() && $("[name='first_name']").val() && $("[name='last_name']").val() && $("[name='email']").val() && $("[name='street']").val() && $("[name='city']").val() && $("[name='postal_code']").val()){
+                return false;
+            }
+            else
+                return true;
+        }
+
+        $(document).ready(function() {
+            $("[name='username']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='password']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='first_name']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='last_name']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='email']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='street']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='city']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='province']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+            $("[name='postal_code']").change(function() {
+                if (!isEmpty()) {
+                    $('input.btn').removeAttr('disabled');
+                }
+                else if (isEmpty()) {
+                    $('input.btn').attr('disabled', 'true');
+                }
+            });
+        });
