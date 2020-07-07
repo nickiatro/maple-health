@@ -6,11 +6,11 @@ block content
         form(method='POST', action="/update/" + user.username)
             #form-group
                 label Username: 
-                input.form-control.disabled(name="username", type="text" value=user.username readonly)
+                input.form-control(name="username", type="text" value=user.username readonly)
             br
             #form-group
                 label Password: 
-                input.form-control.disabled(name="password", type="text" value=user.password readonly)
+                input.form-control(name="password", type="text" value=user.password readonly)
             br
             #form-group
                 label First Name: 
