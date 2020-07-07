@@ -17,4 +17,9 @@ module.exports = (app, passport) => {
       failureRedirect: '/login',
     })(req, res, next);
   });
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+  });
 };
