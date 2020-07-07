@@ -74,9 +74,7 @@ exports.getUser = username => {
 
 exports.updateUser = (req, res) => {
   var sql =
-    "UPDATE users SET password = '" +
-    req.body.password +
-    "', first_name = '" +
+    "UPDATE users SET first_name = '" +
     req.body.first_name +
     "', last_name = '" +
     req.body.last_name +
