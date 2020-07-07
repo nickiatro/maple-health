@@ -1,4 +1,4 @@
-module.exports = app => {
+module.exports = (app, passport) => {
   app.get('/', (req, res) => {
     res.render('index', { title: 'User Management' });
   });
