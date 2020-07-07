@@ -32,7 +32,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 require('./routes/routes')(app, passport);
-require('./routes/user_routes')(app);
+require('./routes/user_routes')(app, passport);
 
 database.createUserTable();
 
