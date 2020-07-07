@@ -11,4 +11,24 @@ block content
             label Password: 
             input.form-control(name="password", type="password")
         br
-        input.btn.btn-primary(type="submit")
+        input.btn.btn-primary(type="submit" disabled)
+block script
+     script.
+            $(document).ready(function() {
+                $("[name='username']").change(function() {
+                    if ($("[name='username']").val() && $("[name='password']").val()) {
+                        $('input.btn').removeAttr('disabled');
+                    }
+                    else if (!($("[name='username']").val() && $("[name='password']").val())) {
+                        $('input.btn').attr('disabled', 'true');
+                    }
+                });
+                $("[name='password']").change(function() {
+                    if ($("[name='username']").val() && $("[name='password']").val()) {
+                        $('input.btn').removeAttr('disabled');
+                    }
+                    else if (!($("[name='username']").val() && $("[name='password']").val())) {
+                        $('input.btn').attr('disabled', 'true');
+                    }
+                });
+            });
