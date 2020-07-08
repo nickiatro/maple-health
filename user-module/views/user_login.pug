@@ -13,22 +13,4 @@ block content
         br
         input.btn.btn-primary(type="submit" disabled)
 block script
-     script.
-            $(document).ready(function() {
-                $("[name='username']").change(function() {
-                    if ($("[name='username']").val() && $("[name='password']").val()) {
-                        $('input.btn').removeAttr('disabled');
-                    }
-                    else if (!($("[name='username']").val() && $("[name='password']").val())) {
-                        $('input.btn').attr('disabled', 'true');
-                    }
-                });
-                $("[name='password']").change(function() {
-                    if ($("[name='username']").val() && $("[name='password']").val()) {
-                        $('input.btn').removeAttr('disabled');
-                    }
-                    else if (!($("[name='username']").val() && $("[name='password']").val())) {
-                        $('input.btn').attr('disabled', 'true');
-                    }
-                });
-            });
+     script(src="/scripts/user_login.js")
