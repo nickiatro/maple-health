@@ -1,8 +1,9 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $.ajax({
     url: '/update',
+    method: 'GET',
     success: res => {
-      $('div.container').html($(res).filter('div.container'));
+      document.write(res);
     },
   });
 });
