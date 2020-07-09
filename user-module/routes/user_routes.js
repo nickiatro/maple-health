@@ -19,7 +19,7 @@ module.exports = (app, passport) => {
   app.get('/update/:username', ensureAuthenticated, (req, res) => {
     res.render('update_user_form', {
       title: 'Update User Information',
-      user: user_controller.getUser(req.params.username),
+      result: user_controller.getUser(req.params.username),
     });
   });
 
