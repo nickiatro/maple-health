@@ -91,7 +91,6 @@ exports.updateUser = (req, res) => {
     "' WHERE username = '" +
     req.body.username +
     "';";
-  console.log(sql);
   database.connection.query(sql, (err, result) => {
     if (err) {
       throw err;
