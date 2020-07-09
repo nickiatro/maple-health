@@ -9,4 +9,6 @@
   <li>MySQL</li>
   <li>bcrypt.js</li>
   <li>Passport.js</li>
+  <li>Bootstrap</li>
+  <li>jQuery ($.ajax)</li>
 </ul>
