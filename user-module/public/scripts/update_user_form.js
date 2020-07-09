@@ -37,7 +37,7 @@ function isValid() {
   return !isEmpty() && isValidEmail() && isValidPostalCode();
 }
 
-$(document).ready(function() {
+function addInputValidation() {
   if (isValid()) {
     $('input.btn').removeAttr('disabled');
   }
@@ -103,5 +103,16 @@ $(document).ready(function() {
     } else if (!isValid()) {
       $('input.btn').attr('disabled', 'true');
     }
+  });
+}
+
+$(document).ready(() => {
+  $.ajax({
+    url: $(location).attr('href'),
+    method: 'GET',
+    success: res => {
+      $('div.container').replaceWith($(res).filter('div.container'));
+      addInputValidation();
+    },
   });
 });
