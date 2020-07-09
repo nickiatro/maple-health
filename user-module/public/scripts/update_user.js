@@ -3,7 +3,7 @@ $(document).ready(() => {
     url: '/update',
     method: 'GET',
     success: res => {
-      document.write(res);
+      $('div.container').replaceWith($(res).filter('div.container'));
     },
   });
 });
