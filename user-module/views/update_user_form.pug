@@ -2,56 +2,56 @@ extends layout
 
 block content
     h1 #{title}
-    if user
-        form(method='POST', action="/update/" + user.username)
+    if result
+        form(method='POST', action="/update/" + result.username)
             #form-group
                 label Username: 
-                input.form-control(name="username", type="text" value=user.username readonly)
+                input.form-control(name="username", type="text" value=result.username readonly)
             br
             #form-group
                 label Password: 
-                input.form-control(name="password", type="text" value=user.password readonly)
+                input.form-control(name="password", type="text" value=result.password readonly)
             br
             #form-group
                 label First Name: 
-                input.form-control(name="first_name", type="text" value=user.first_name)
+                input.form-control(name="first_name", type="text" value=result.first_name)
             br
             #form-group
                 label Last Name: 
-                input.form-control(name="last_name", type="text" value=user.last_name)
+                input.form-control(name="last_name", type="text" value=result.last_name)
             br
             #form-group
                 label Email Address:  
-                input.form-control(name="email", type="text" value=user.email)
+                input.form-control(name="email", type="text" value=result.email)
             br
             #form-group
                 label Street Address: 
-                input.form-control(name="street", type="text" value=user.street)
+                input.form-control(name="street", type="text" value=result.street)
             br
             #form-group
                 label City/Town: 
-                input.form-control(name="city", type="text" value=user.city)
+                input.form-control(name="city", type="text" value=result.city)
             br
             #form-group
                 label Province/Territory: 
                 select.form-control(name="province")
-                    option(value="BC" selected=("BC" == user.province)) British Columbia / Colombie-Britannique
-                    option(value="AB" selected=("AB" == user.province)) Alberta
-                    option(value="SK" selected=("SK" == user.province)) Saskatchewan
-                    option(value="MB" selected=("MB" == user.province)) Manitoba
-                    option(value="ON" selected=("ON" == user.province)) Ontario
-                    option(value="QC" selected=("QC" == user.province)) Québec
-                    option(value="NB" selected=("NB" == user.province)) New Brunswick / Nouveau-Brunswick
-                    option(value="PE" selected=("PE" == user.province)) Prince Edward Island / Île-du-Prince-Édouard
-                    option(value="NS" selected=("NS" == user.province)) Nova Scotia / Nouvelle-Écosse
-                    option(value="NL" selected=("NL" == user.province)) Newfoundland and Labrador / Terre-Neuve-et-Labrador
-                    option(value="YT" selected=("YT" == user.province)) Yukon
-                    option(value="NT" selected=("NT" == user.province)) Northwest Territories / Territoires du Nord-Ouest
-                    option(value="NU" selected=("NU" == user.province)) Nunavut
+                    option(value="BC" selected=("BC" == result.province)) British Columbia / Colombie-Britannique
+                    option(value="AB" selected=("AB" == result.province)) Alberta
+                    option(value="SK" selected=("SK" == result.province)) Saskatchewan
+                    option(value="MB" selected=("MB" == result.province)) Manitoba
+                    option(value="ON" selected=("ON" == result.province)) Ontario
+                    option(value="QC" selected=("QC" == result.province)) Québec
+                    option(value="NB" selected=("NB" == result.province)) New Brunswick / Nouveau-Brunswick
+                    option(value="PE" selected=("PE" == result.province)) Prince Edward Island / Île-du-Prince-Édouard
+                    option(value="NS" selected=("NS" == result.province)) Nova Scotia / Nouvelle-Écosse
+                    option(value="NL" selected=("NL" == result.province)) Newfoundland and Labrador / Terre-Neuve-et-Labrador
+                    option(value="YT" selected=("YT" == result.province)) Yukon
+                    option(value="NT" selected=("NT" == result.province)) Northwest Territories / Territoires du Nord-Ouest
+                    option(value="NU" selected=("NU" == result.province)) Nunavut
             br
             #form-group
                 label Postal Code: 
-                input.form-control(name="postal_code", type="text" value=user.postal_code)
+                input.form-control(name="postal_code", type="text" value=result.postal_code)
             br
             input.btn.btn-primary(type="submit" disabled)
     else
