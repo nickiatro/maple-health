@@ -16,12 +16,16 @@ const LoginForm = () => {
         <ModalHeader>Login</ModalHeader>
         <ModalBody>
           <FormGroup>
-            <label>USERNAME</label>
+            <label>
+              <strong>USERNAME</strong>
+            </label>
             <FormInput id="username" />
           </FormGroup>
           <FormGroup>
-            <label>PASSWORD</label>
-            <FormInput id="password" />
+            <label>
+              <strong>PASSWORD</strong>
+            </label>
+            <FormInput id="password" type="password" />
           </FormGroup>
         </ModalBody>
         <ModalFooter>
