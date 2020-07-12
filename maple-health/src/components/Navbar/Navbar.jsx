@@ -7,7 +7,9 @@ import {
   NavItem,
   NavLink,
   Nav,
+  Modal,
 } from 'shards-react';
+import { LoginForm } from '../LoginForm';
 
 const NavigationBar = () => {
   const [collapseOpen, setCollapseOpen] = useState(false);
@@ -34,13 +36,16 @@ const NavigationBar = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                href=""
+                href="#"
                 onClick={() => {
                   setModalOpen(!modalOpen);
                 }}
               >
                 Login
               </NavLink>
+              <Modal open={modalOpen} toggle={() => setModalOpen(!modalOpen)}>
+                <LoginForm />
+              </Modal>
             </NavItem>
           </Nav>
         </Collapse>
