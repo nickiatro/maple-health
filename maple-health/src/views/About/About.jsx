@@ -5,9 +5,8 @@ const About = () => {
       <br />
       <h1>Your Health Questions. Answered.</h1>
       <h6>
-        Maple Health Montréal has a dedicated team of doctors and nurses willing
-        to answer
-        <br /> all questions regarding your health and wellness.
+        Maple Health Montréal has a dedicated team of doctors and nurses <br />
+        willing to answer all questions regarding your health and wellness.
       </h6>
       <br />
       <h1>
