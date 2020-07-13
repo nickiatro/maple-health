@@ -27,12 +27,20 @@ const NavigationBar = () => {
         <Collapse open={collapseOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink active href="/about">
+              <NavLink
+                active={window.location.href.includes('/about')}
+                href="/about"
+              >
                 About
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact-us">Contact</NavLink>
+              <NavLink
+                active={window.location.href.includes('/contact-us')}
+                href="/contact-us"
+              >
+                Contact
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
