@@ -6,8 +6,39 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+
+  const [validName, setValidName] = useState(null);
+  const [validEmail, setValidEmail] = useState(null);
+  const [validSubject, setValidSubject] = useState(null);
+  const [validMessage, setValidMessage] = useState(null);
+
   const [disabled, setDisabled] = useState(true);
+
   const validateForm = () => {
+    if (name.length == 0) {
+      setValidName(false);
+    } else {
+      setValidName(true);
+    }
+    if (
+      !email.match(
+        /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+      )
+    ) {
+      setValidEmail(false);
+    } else {
+      setValidEmail(true);
+    }
+    if (subject.length == 0) {
+      setValidSubject(false);
+    } else {
+      setValidSubject(true);
+    }
+    if (message.length == 0) {
+      setValidMessage(false);
+    } else {
+      setValidMessage(true);
+    }
     if (
       name.length > 0 &&
       email.match(
@@ -32,7 +63,8 @@ const Contact = () => {
           <FormInput
             id="name"
             value={name}
-            valid={null}
+            valid={validName}
+            invalid={validName == null ? null : !validName}
             onChange={e => {
               setName(e.target.value);
             }}
@@ -48,7 +80,8 @@ const Contact = () => {
           <FormInput
             id="email"
             value={email}
-            valid={null}
+            valid={validEmail}
+            invalid={validEmail == null ? null : !validEmail}
             onChange={e => {
               setEmail(e.target.value);
             }}
@@ -64,7 +97,8 @@ const Contact = () => {
           <FormInput
             id="subject"
             value={subject}
-            valid={null}
+            valid={validSubject}
+            invalid={validSubject == null ? null : !validSubject}
             onChange={e => {
               setSubject(e.target.value);
             }}
@@ -81,7 +115,8 @@ const Contact = () => {
             rows="6"
             id="message"
             value={message}
-            valid={null}
+            valid={validMessage}
+            invalid={validMessage == null ? null : !validMessage}
             onChange={e => {
               setMessage(e.target.value);
             }}
