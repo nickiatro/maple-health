@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, FormInput, Button, FormTextarea } from 'shards-react';
 import { useState } from 'react';
+import axios from 'axios';
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -125,7 +126,17 @@ const Contact = () => {
             }}
           />
         </FormGroup>
-        <Button theme="danger" disabled={disabled}>
+        <Button
+          theme="danger"
+          disabled={disabled}
+          onClick={() => {
+            axios({
+              method: 'POST',
+              url: '/api/send',
+              data: { name: name, email: email, message: message },
+            });
+          }}
+        >
           Submit
         </Button>
       </Form>
