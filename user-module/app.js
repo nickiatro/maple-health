@@ -33,6 +33,7 @@ app.set('view engine', 'pug');
 
 require('./routes/routes')(app, passport);
 require('./routes/user_routes')(app, passport);
+require('./routes/email_routes')(app);
 
 database.createUserTable();
 
