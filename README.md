@@ -18,6 +18,7 @@
 ### Technologies:
 <ul>
    <li>React</li>
+   <li>Bootstrap</li>
   <li>Node.js (Express.js)</li>
   <li>Nodemailer</li>
 </ul>
