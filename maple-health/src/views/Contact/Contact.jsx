@@ -129,6 +129,7 @@ const Contact = () => {
           />
         </FormGroup>
         <Button
+          type="submit"
           theme="danger"
           disabled={disabled}
           onClick={() => {
