@@ -16,13 +16,14 @@ const Contact = () => {
   const [disabled, setDisabled] = useState(true);
 
   const validateForm = () => {
-    if (name.length == 0) {
+    if (name.length === 0) {
       setValidName(false);
     } else {
       setValidName(true);
     }
     if (
       !email.match(
+        // eslint-disable-next-line
         /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
       )
     ) {
@@ -30,12 +31,12 @@ const Contact = () => {
     } else {
       setValidEmail(true);
     }
-    if (subject.length == 0) {
+    if (subject.length === 0) {
       setValidSubject(false);
     } else {
       setValidSubject(true);
     }
-    if (message.length == 0) {
+    if (message.length === 0) {
       setValidMessage(false);
     } else {
       setValidMessage(true);
@@ -43,6 +44,7 @@ const Contact = () => {
     if (
       name.length > 0 &&
       email.match(
+        // eslint-disable-next-line
         /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
       ) &&
       subject.length > 0 &&

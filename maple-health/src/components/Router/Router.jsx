@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from '../../views/Home';
 import { About } from '../../views/About';
 import { Contact } from '../../views/Contact';
