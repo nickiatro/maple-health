@@ -133,7 +133,12 @@ const Contact = () => {
             axios({
               method: 'POST',
               url: '/api/send',
-              data: { name: name, email: email, message: message },
+              data: {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+              },
             });
           }}
         >
