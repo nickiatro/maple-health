@@ -1,4 +1,4 @@
-# User Module & Maple Health
+# User Module & Maple Health Montréal
 
 ## User Module
 
@@ -11,4 +11,13 @@
   <li>Passport.js</li>
   <li>Bootstrap</li>
   <li>jQuery ($.ajax)</li>
+</ul>
+
+## Maple Health Montréal
+
+### Technologies:
+<ul>
+   <li>React</li>
+  <li>Node.js (Express.js)</li>
+  <li>Nodemailer</li>
 </ul>
