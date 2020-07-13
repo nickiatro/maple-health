@@ -22,4 +22,8 @@ module.exports = (app, passport) => {
     req.logout();
     res.redirect('/');
   });
+
+  app.post('/api/send', (req, res) => {
+    res.status(200).send('OK');
+  });
 };
