@@ -4,6 +4,7 @@ import { useState } from 'react';
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [disabled, setDisabled] = useState(true);
   const validateForm = () => {
@@ -12,6 +13,7 @@ const Contact = () => {
       email.match(
         /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
       ) &&
+      subject.length > 0 &&
       message.length > 0
     ) {
       setDisabled(false);
@@ -57,10 +59,26 @@ const Contact = () => {
         </FormGroup>
         <FormGroup>
           <label>
+            <strong>SUBJECT</strong>
+          </label>
+          <FormInput
+            id="subject"
+            value={subject}
+            valid={null}
+            onChange={e => {
+              setSubject(e.target.value);
+            }}
+            onBlur={() => {
+              validateForm();
+            }}
+          />
+        </FormGroup>
+        <FormGroup>
+          <label>
             <strong>MESSAGE</strong>
           </label>
           <FormTextarea
-            rows="8"
+            rows="6"
             id="message"
             value={message}
             valid={null}
