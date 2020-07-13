@@ -7,6 +7,7 @@ import {
   useRouteMatch,
   useParams,
 } from 'react-router-dom';
+import { Home } from '../../views/Home';
 import { About } from '../../views/About';
 import { Contact } from '../../views/Contact';
 const Router = () => {
@@ -14,6 +15,9 @@ const Router = () => {
     <div>
       <BrowserRouter>
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
